@@ -2,6 +2,7 @@ import React from "react";
 import "./Nav.scss";
 import Logos from "../../assets/logos/Logo-brainflix.svg";
 
+
 const Nav = () => {
   return (
     <nav className="nav">

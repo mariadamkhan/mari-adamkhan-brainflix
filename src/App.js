@@ -1,15 +1,20 @@
 import './App.scss';
 import Nav from './components/Nav/Nav';
-import Hero from './components/Hero/Hero';
+import Videos from './components/Videos/videoData/Videos';
 import './styles/global.scss';
 
 function App() {
   return (
+    <>
     <header>
     <Nav />
-    <Hero />
     </header>
+    <main>
+      <Videos />
+    </main>
+    </>
   );
 }
 
 export default App;
+
