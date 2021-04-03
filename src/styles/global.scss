@@ -1,0 +1,13 @@
+@use './partials/typography' as *;
+@use './partials/variables' as *;
+
+html {
+    font-size: 10px;
+  }
+  
+  body {
+    font-family: "Avenir", "Verdana";
+    margin: 0;
+    color: $graphite;
+  }
+  
