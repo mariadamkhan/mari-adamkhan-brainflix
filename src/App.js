@@ -1,19 +1,55 @@
-import './App.scss';
-import Nav from './components/Nav/Nav';
-import Videos from './components/Videos/videoData/Videos';
-import './styles/global.scss';
+import "./App.scss";
+import "./styles/global.scss";
+import Nav from "./components/Nav/Nav";
+import videosData from "./data/video-details.json";
+import CurrentVideo from "./components/Videos/Current/CurrentVideo";
+import Details from "./components/Videos/VideoDetails/Details";
+import Form from "./components/Comments/Form/Form";
+import DefaultComments from "./components/Comments/UserComments/DefaultComments";
+import VideoList from "./components/VideoList/VideoList";
+import React from "react";
 
-function App() {
-  return (
-    <>
-    <header>
-    <Nav />
-    </header>
-    <main>
-      <Videos />
-    </main>
-    </>
-  );
+class App extends React.Component {
+  
+  state = {
+    defaultVideo: videosData.filter((video) => video.id === "1af0jruup5gu").shift(),
+    upNextVideo: videosData.filter((video) => video.id !== "1af0jruup5gu"),
+  };
+
+  updateVideos = (newVideo) => {
+    this.setState({
+      defaultVideo: videosData.filter((video) => video.id === newVideo).shift(),
+      upNextVideo: videosData.filter((video) => video.id !== newVideo),
+    });
+  };
+
+  render() {
+    // console.log(this.state.defaultVideo);
+    // console.log(this.state.upNextVideo);
+
+    return (
+      <>
+        <header>
+          <Nav />
+        </header>
+        <main>
+          <section className="videos">
+            <CurrentVideo defaultVideo={this.state.defaultVideo} />
+            <Details defaultVideo={this.state.defaultVideo} />
+          </section>
+          <section className="comments">
+            <Form  defaultVideo={this.state.defaultVideo}/>
+          </section>
+          <section className="default-comments">
+          <DefaultComments defaultVideo={this.state.defaultVideo}/>
+          </section>
+          <section className="video-list">
+            <VideoList upNextVideo={this.state.upNextVideo} updateVideos={this.updateVideos}/>
+            </section>
+        </main>
+      </>
+    );
+  }
 }
 
 export default App;

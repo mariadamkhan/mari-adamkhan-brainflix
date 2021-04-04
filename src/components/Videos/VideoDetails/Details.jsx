@@ -5,7 +5,7 @@ import IconLike from "../../../assets/icons/Icon-likes.svg";
 function Details({ defaultVideo }) {
   const postDate = new Date(defaultVideo.timestamp);
   return (
-    <section className="videos__details">
+    <div className="videos__details">
       <h1 className="videos__title">{defaultVideo.title}</h1>
       <div className="videos__container">
         <h4 className="videos__channel">{defaultVideo.channel}</h4>
@@ -18,7 +18,7 @@ function Details({ defaultVideo }) {
         <span className="videos__likes">{defaultVideo.likes}</span>
       </div>
       <p className="videos__description">{defaultVideo.description}</p>
-    </section>
+    </div>
   );
 }
 
