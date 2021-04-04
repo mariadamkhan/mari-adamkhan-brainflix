@@ -4,7 +4,7 @@ import "./VideoList.scss";
 function VideoList({ upNextVideo, updateVideos }) {
   return (
     <>
-      <h2 className="video-list__title">Next Video</h2>
+      <h2 className="video-list__category">Next Video</h2>
       {upNextVideo.map((video) => {
         return (
           <div key={video.id}className="video-list__body">

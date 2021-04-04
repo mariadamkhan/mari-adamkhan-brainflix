@@ -1,0 +1,56 @@
+@use '../../../styles/global.scss' as *;
+@use '../../../styles/partials/typography' as *;
+@use '../../../styles/partials/variables' as *;
+
+.videos {
+  &__details {
+    margin: 0 $mobile-spacing;
+  }
+  &__title {
+    font-size: 2.6rem;
+    font-weight: $heavy;
+    margin: 3.2rem 0 1.6rem;
+  }
+  &__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+  &__channel {
+    margin: 0;
+    font-size: 1.6rem;
+  }
+  &__date {
+    font-size: 1.3rem;
+    color: $silver;
+    margin-left: 0.8rem;
+  }
+  &__container-two {
+    display: flex;
+    padding-bottom: 2.2rem;
+    border-bottom: 0.1rem solid $mercury;
+  }
+  &__watched {
+    display: flex;
+    align-items: center;
+  }
+  &__liked {
+    margin-left: 3rem;
+    display: flex;
+    align-items: center;
+  }
+  &__views {
+    font-size: 1.3rem;
+    color: $graphite;
+    margin-left: 0.8rem;
+  }
+  &__likes {
+    @extend .videos__views;
+  }
+  &__description {
+      font-size: 1.2rem;
+      line-height: 18px;
+      margin: 2.4rem 0 4rem;
+  }
+}

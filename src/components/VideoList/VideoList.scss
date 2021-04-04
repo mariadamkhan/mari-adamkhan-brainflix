@@ -1,6 +1,39 @@
+@use '../../styles/global.scss' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+
 .video-list {
-    &__video {
-        width: 12rem;
-        height: 7rem;
-    }
+  margin: 0 $mobile-spacing;
+  display: flex;
+  flex-direction: column;
+  &__category {
+    font-size: 1.2rem;
+    color: $silver;
+    text-transform: uppercase;
+  }
+  &__body {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2rem;
+  }
+  &__video {
+    min-width: 12rem;
+    max-width: 12rem;
+    height: 7rem;
+    border-radius: 0.4rem;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1.5rem;
+  }
+  &__title {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: $bold;
+    margin-bottom: 1rem;
+  }
+  &__channel {
+    font-size: 1.2rem;
+  }
 }

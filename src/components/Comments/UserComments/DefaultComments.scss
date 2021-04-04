@@ -1,0 +1,49 @@
+@use '../../../styles/global.scss' as *;
+@use '../../../styles/partials/typography' as *;
+@use '../../../styles/partials/variables' as *;
+
+.default-comments {
+    margin: 0 $mobile-spacing 4rem;
+    &__wrap {
+      margin-top: 2.4rem;
+      display: flex;
+      justify-content: center;
+      padding-bottom: 2.4rem;
+      border-bottom: 0.1rem solid $mercury;
+  
+    }
+    &__avatar {
+      width: 4.5rem;
+      height: 4.5rem;
+      background-color: $mercury;
+      margin-right: 1.5rem;
+      border-radius: 50%;
+    }
+    &__body {
+      width: 80%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  
+    &__name {
+      font-size: $h2mobile;
+      font-weight: $bold;
+      margin: 0 0 1rem;
+      width: 65%;
+    }
+    &__date {
+      font-size: 1.3rem;
+      color: $silver;
+      width: 30%;
+      text-align: end;
+    }
+    &__text {
+      padding: 0;
+      margin: 0;
+      font-size: $h2mobile;
+      line-height: 2rem;
+      width: 100%;
+    }
+  }
+  
