@@ -1,21 +1,24 @@
 @use '../../../styles/global.scss' as *;
 @use '../../../styles/partials/typography' as *;
 @use '../../../styles/partials/variables' as *;
+@use '../../../styles/partials/mixins' as *;
 
+.hero {
 
-.videos{
-    margin:0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-&__hero {
+  &__video {
     height: 18.3rem;
     background-color: black;
     max-width: 100%;
     min-width: 100%;
     object-fit: contain;
 
+    @include tablet {
+      height: 40rem;
+    }
 
-}
+    @include desktop {
+        height: 54rem;
+        width: 100%;
+    }
+  }
 }

@@ -1,20 +1,39 @@
 @use '../../styles/global.scss' as *;
 @use '../../styles/partials/typography' as *;
 @use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
 
 .video-list {
   margin: 0 $mobile-spacing;
   display: flex;
   flex-direction: column;
+
+  @include tablet {
+    margin: 0 $tablet-spacing;
+  }
+
+  @include desktop {
+    margin: 0 0 0 $tablet-spacing;
+    width: 36.8rem;
+  }
   &__category {
-    font-size: 1.2rem;
+    font-size: $h2mobile;
     color: $silver;
     text-transform: uppercase;
+    margin: 3.2rem 0;
+
+    @include desktop {
+      margin: 4rem 0;
+    }
   }
   &__body {
     display: flex;
     flex-direction: row;
-    margin-bottom: 2rem;
+    margin-bottom: 2.2rem;
+
+    @include desktop {
+      margin-bottom: 3rem;
+    }
   }
   &__video {
     min-width: 12rem;
@@ -26,14 +45,31 @@
     display: flex;
     flex-direction: column;
     margin-left: 1.5rem;
+    padding-top: 0.2rem;
   }
   &__title {
     margin: 0;
-    font-size: 1.3rem;
+    font-size: $h2mobile;
     font-weight: $bold;
     margin-bottom: 1rem;
+    width: 14.2rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    @include tablet {
+      display: flex;
+      width: 19.5rem;
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
   }
   &__channel {
     font-size: 1.2rem;
+
+    @include tablet {
+      font-size: $h2mobile;
+    }
   }
 }

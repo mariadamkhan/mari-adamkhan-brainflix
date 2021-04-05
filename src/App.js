@@ -10,9 +10,10 @@ import VideoList from "./components/VideoList/VideoList";
 import React from "react";
 
 class App extends React.Component {
-  
   state = {
-    defaultVideo: videosData.filter((video) => video.id === "1af0jruup5gu").shift(),
+    defaultVideo: videosData
+      .filter((video) => video.id === "1af0jruup5gu")
+      .shift(),
     upNextVideo: videosData.filter((video) => video.id !== "1af0jruup5gu"),
   };
 
@@ -31,21 +32,30 @@ class App extends React.Component {
       <>
         <header>
           <Nav />
+          <section className="hero">
+            <CurrentVideo defaultVideo={this.state.defaultVideo} />
+          </section>
         </header>
         <main>
-          <section className="videos">
-            <CurrentVideo defaultVideo={this.state.defaultVideo} />
+          <article className="container"> 
+          <section className="description">
             <Details defaultVideo={this.state.defaultVideo} />
           </section>
           <section className="comments">
-            <Form  defaultVideo={this.state.defaultVideo}/>
+            <Form defaultVideo={this.state.defaultVideo} />
           </section>
           <section className="default-comments">
-          <DefaultComments defaultVideo={this.state.defaultVideo}/>
+            <DefaultComments defaultVideo={this.state.defaultVideo} />
           </section>
-          <section className="video-list">
-            <VideoList upNextVideo={this.state.upNextVideo} updateVideos={this.updateVideos}/>
-            </section>
+          </article>
+        <aside>
+        <section className="video-list">
+            <VideoList
+              upNextVideo={this.state.upNextVideo}
+              updateVideos={this.updateVideos}
+            />
+          </section>
+        </aside>
         </main>
       </>
     );
@@ -53,4 +63,3 @@ class App extends React.Component {
 }
 
 export default App;
-

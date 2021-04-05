@@ -1,5 +1,6 @@
 @use './partials/typography' as *;
 @use './partials/variables' as *;
+@use './partials/mixins' as *;
 
 html {
     font-size: 10px;
@@ -8,6 +9,16 @@ html {
   body {
     font-family: "Avenir", "Verdana";
     margin: 0;
+    padding: 0;
     color: $graphite;
+  }
+
+  main {
+    @include desktop {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+    }
   }
   

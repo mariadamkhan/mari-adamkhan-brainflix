@@ -5,7 +5,7 @@ function CurrentVideo({ defaultVideo }) {
   console.log(defaultVideo)
   return (
     <>
-      <video className="videos__hero" poster={defaultVideo.image} controls></video>
+      <video className="hero__video" poster={defaultVideo.image} controls></video>
     </>
   );
 }
