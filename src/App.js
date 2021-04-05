@@ -11,11 +11,10 @@ import React from "react";
 
 class App extends React.Component {
   state = {
-    defaultVideo: videosData
-      .filter((video) => video.id === "1af0jruup5gu")
-      .shift(),
-    upNextVideo: videosData.filter((video) => video.id !== "1af0jruup5gu"),
+    defaultVideo: videosData.filter((video) => video.id === "1af0jruup5gu").shift(),
+    upNextVideo: videosData.filter((video) => video.id !== "1af0jruup5gu")
   };
+
 
   updateVideos = (newVideo) => {
     this.setState({
@@ -25,9 +24,6 @@ class App extends React.Component {
   };
 
   render() {
-    // console.log(this.state.defaultVideo);
-    // console.log(this.state.upNextVideo);
-
     return (
       <>
         <header>

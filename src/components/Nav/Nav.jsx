@@ -3,10 +3,11 @@ import Logos from "../../assets/logos/Logo-brainflix.svg";
 import "./Nav.scss";
 
 
+
 const Nav = () => {
   return (
     <nav className="nav">
-      <img src={Logos} className="nav__logo" alt="Brainflix Logo" />
+      <a href="../../../public/index.html"><img src={Logos} className="nav__logo" alt="Brainflix Logo" /></a>
       <form id="form" className="nav__form" name="form">
         <input
           type="search"
