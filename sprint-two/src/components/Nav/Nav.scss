@@ -1,0 +1,101 @@
+@use '../../styles/global.scss' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.nav {
+  height: 16.9rem;
+  margin: 0 $mobile-spacing;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  @include tablet {
+    flex-direction: row;
+    height: 8rem;
+    margin: 0 $tablet-spacing;
+    justify-content: space-between;
+
+    @include desktop {
+      margin: 0 $desktop-spacing;
+    }
+
+  }
+  &__logo {
+    height: 2.4rem;
+    margin: 1.1rem 0;
+  }
+  &__search {
+    height: 4.8rem;
+    width: 28.8rem;
+    border: 0.1rem solid $mercury;
+    border-radius: 0.4rem;
+    outline: none;
+    background-image: url(../../assets/icons/Icon-search.svg);
+    background-size: 1.6rem;
+    background-position-x: 1.5rem;
+    background-repeat: no-repeat;
+    background-position-y: center;
+
+    @include tablet {
+      width: 25rem;
+      margin: 0 2rem 0 15rem;
+    }
+
+    @include desktop {
+      margin: 0 2rem 0 50rem;
+    }
+  }
+  &__search::placeholder {
+    color: $graphite;
+    font-size: $h2mobile;
+    font-family: "Avenir";
+  }
+  &__search[type="search"] {
+    box-sizing: border-box;
+    padding-left: 4rem;
+  }
+  &__wrap{
+      display: flex;
+  }
+  &__cta {
+    height: 4.8rem;
+    min-width: 22.2rem;
+    font-size: $h2mobile;
+    color: $white;
+    font-weight: $bold;
+    text-transform: uppercase;
+    background-color: $bf-blue;
+    border-radius: 0.4rem;
+    border-style: none;
+    outline: none;
+    padding:0 0 0 1rem;
+    margin: 0.8rem 0 $mobile-spacing;
+    background-image: url(../../assets/icons/Icon-upload.svg);
+    background-repeat: no-repeat;
+    background-size: 1.3rem;
+    background-position-y: center;
+    background-position-x: 32%;
+    @include tablet {
+      min-width: 11.1rem;
+      background-position-x: 13%;
+      margin: 0;
+    }
+  }
+  &__cta:hover {
+    background-color: $bf-hover;
+  }
+  &__avatar {
+    background-image: url(../../assets/images/Mohan-muruge.jpg);
+    background-position: left;
+    background-size: cover;
+    width: 4.8rem;
+    height: 4.8rem;
+    margin: 0.8rem 0 0 1.6rem;
+    border-radius: 50%;
+
+    @include tablet {
+      margin: 0 0 0 2rem;
+    }
+  }
+}
