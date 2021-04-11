@@ -29,11 +29,9 @@ export default class Home extends Component {
   };
 
   getVideos = () => {
-    console.log(this.props)
     return axios
       .get(`https://project-2-api.herokuapp.com/videos${API_KEY}`)
       .then((res) => {
-        console.log(res.data);
         this.setState({
           upNextVideo: res.data,
         });
@@ -60,6 +58,7 @@ export default class Home extends Component {
     if(this.state.defaultVideo !== null && this.state.defaultVideo.id !== this.props.match.params.id) {
      this.getVideo(this.props.match.params.id).then(()=> {window.scrollTo(0,0)})  
     }
+    
     if(this.state.defaultVideo !== null && this.state.defaultVideo.id !== this.state.upNextVideo[0].id) {
       this.getVideo(this.props.match.params.id)
     }

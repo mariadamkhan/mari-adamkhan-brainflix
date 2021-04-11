@@ -187,7 +187,7 @@
     width: 28.8rem;
     font-size: 1.4rem;
     color: $bf-blue;
-    font-weight: $bold;
+    font-weight: $heavy;
     text-transform: uppercase;
     text-align: center;
     padding: 0;
@@ -195,7 +195,12 @@
 
     @include tablet {
       width: fit-content;
+      font-weight: $bold;
       margin: 0 4.8rem 0 0;
+    }
+
+    @include desktop{
+        padding: 1.5rem;
     }
   }
   &__cta-upload {
