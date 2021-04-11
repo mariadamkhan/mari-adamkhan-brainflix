@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { Component } from "react";
 import "../../styles/global.scss";
-import videosData from "../../data/video-details.json";
 import CurrentVideo from "../../components/CurrentVideo/CurrentVideo";
 import VideoDetails from "../../components/VideoDetails/VideoDetails";
 import Form from "../../components/Form/Form";

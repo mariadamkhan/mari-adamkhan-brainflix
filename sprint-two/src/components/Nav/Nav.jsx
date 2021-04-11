@@ -18,7 +18,7 @@ const Nav = () => {
         />
       </form>
       <div className="nav__wrap">
-        <button type="submit" className="nav__cta">Upload</button>
+        <Link to="/upload"><button type="submit" className="nav__cta">Upload</button></Link>
         <div className="nav__avatar"></div>
       </div>
     </nav>
