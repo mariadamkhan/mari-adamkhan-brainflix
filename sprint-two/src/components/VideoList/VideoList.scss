@@ -13,8 +13,10 @@
   }
 
   @include desktop {
-    margin: 0 0 0 $tablet-spacing;
+    padding-left: $tablet-spacing;
+    margin: 0;
     width: 36.8rem;
+    border-left: 0.1rem solid $mercury;
   }
   &__category {
     font-size: $h2mobile;
@@ -34,6 +36,10 @@
     @include desktop {
       margin-bottom: 3rem;
     }
+  }
+  &__link {
+    text-decoration: none;
+    color: $graphite;
   }
   &__video {
     min-width: 12rem;

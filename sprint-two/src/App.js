@@ -1,61 +1,23 @@
-import "./App.scss";
-import "./styles/global.scss";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "./pages/Home/Home";
 import Nav from "./components/Nav/Nav";
-import videosData from "./data/video-details.json";
-import CurrentVideo from "./components/Videos/Current/CurrentVideo";
-import Details from "./components/Videos/VideoDetails/Details";
-import Form from "./components/Comments/Form/Form";
-import DefaultComments from "./components/Comments/UserComments/DefaultComments";
-import VideoList from "./components/VideoList/VideoList";
 import React from "react";
 
-class App extends React.Component {
-  state = {
-    defaultVideo: videosData.filter((video) => video.id === "1af0jruup5gu").shift(),
-    upNextVideo: videosData.filter((video) => video.id !== "1af0jruup5gu")
-  };
 
-
-  updateVideos = (newVideo) => {
-    this.setState({
-      defaultVideo: videosData.filter((video) => video.id === newVideo).shift(),
-      upNextVideo: videosData.filter((video) => video.id !== newVideo),
-    });
-  };
-
-  render() {
-    return (
-      <>
-        <header>
-          <Nav />
-          <section className="hero">
-            <CurrentVideo defaultVideo={this.state.defaultVideo} />
-          </section>
-        </header>
-        <main>
-          <article className="container"> 
-          <section className="description">
-            <Details defaultVideo={this.state.defaultVideo} />
-          </section>
-          <section className="comments">
-            <Form defaultVideo={this.state.defaultVideo} />
-          </section>
-          <section className="default-comments">
-            <DefaultComments defaultVideo={this.state.defaultVideo} />
-          </section>
-          </article>
-        <aside>
-        <section className="video-list">
-            <VideoList
-              upNextVideo={this.state.upNextVideo}
-              updateVideos={this.updateVideos}
-            />
-          </section>
-        </aside>
-        </main>
-      </>
-    );
-  }
+function App() {
+  return (
+    <>
+      <Router>
+        <Nav />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/videos/:id" render={routerProps => <Home {...routerProps}/>}/>
+          {/* <Route path="/videos/video:id" render={routerProps => <Home {...routerProps}/>}/> */}
+        </Switch>
+      </Router>
+    </>
+  );
 }
 
+export const API_KEY ="?api_key=8ee384fb-4633-4cf7-8154-79ad9b309f82";
 export default App;

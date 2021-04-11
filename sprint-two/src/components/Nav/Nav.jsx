@@ -1,5 +1,6 @@
 import React from "react";
 import Logos from "../../assets/logos/Logo-brainflix.svg";
+import {Link} from "react-router-dom";
 import "./Nav.scss";
 
 
@@ -7,7 +8,7 @@ import "./Nav.scss";
 const Nav = () => {
   return (
     <nav className="nav">
-      <a href="../../../public/index.html"><img src={Logos} className="nav__logo" alt="Brainflix Logo" /></a>
+      <Link to="/"><img src={Logos} className="nav__logo" alt="Brainflix Logo" /></Link>
       <form id="form" className="nav__form" name="form">
         <input
           type="search"

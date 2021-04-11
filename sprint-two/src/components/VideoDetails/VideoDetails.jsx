@@ -1,9 +1,9 @@
 import React from "react";
-import IconEye from "../../../assets/icons/Icon-views.svg";
-import IconLike from "../../../assets/icons/Icon-likes.svg";
+import IconEye from "../../assets/icons/Icon-views.svg";
+import IconLike from "../../assets/icons/Icon-likes.svg";
 import "./VideoDetails.scss";
 
-function Details({ defaultVideo }) {
+function VideoDetails({ defaultVideo }) {
   const postDate = new Date(defaultVideo.timestamp);
   return (
     <div className="description__details">
@@ -29,4 +29,4 @@ function Details({ defaultVideo }) {
   );
 }
 
-export default Details;
+export default VideoDetails;

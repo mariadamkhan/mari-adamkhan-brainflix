@@ -2,10 +2,10 @@ import React from "react";
 import "./Form.scss";
 
 
-const Form = ({defaultVideo}) => {
+const Form = () => {
   return (
     <>
-      <h3 className="comments__total">{defaultVideo.comments.length} Comments</h3>
+      <h3 className="comments__total">3 Comments</h3>
       <div className="comments__container">
       <div className="comments__avatar"></div>
       <form id="form" className="comments__form" name="form">
