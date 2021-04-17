@@ -14,7 +14,6 @@ export default class Home extends Component {
     upNextVideo: null,
   };
 
-
   componentDidMount = () => {
     return axios
       .get(`https://project-2-api.herokuapp.com/videos${API_KEY}`)
@@ -27,7 +26,6 @@ export default class Home extends Component {
             `https://project-2-api.herokuapp.com/videos/${res.data[0].id}${API_KEY}`
           )
           .then((res) => {
-            console.log(res);
             this.setState({
               defaultVideo: res.data,
             });

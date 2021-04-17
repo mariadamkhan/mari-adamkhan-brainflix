@@ -1,0 +1,223 @@
+@use '../../styles/global.scss' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.upload {
+//   margin: 0 $mobile-spacing;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  border-top: 0.1rem solid $mercury;
+
+  @include tablet {
+    margin: 0;
+  }
+
+  &__title {
+    font-size: 2.4rem;
+    font-weight: $heavy;
+    margin: 2.4rem $mobile-spacing 3rem;
+    
+
+    @include tablet {
+      margin: 4.8rem $tablet-spacing 0;
+      font-size: 3.8rem;
+      padding-bottom: 3.2rem;
+      border-bottom: 0.1rem solid $mercury;
+    }
+
+    @include desktop {
+      margin: 4.8rem $desktop-spacing 0;
+    }
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin: 0 $mobile-spacing;
+
+    @include tablet {
+      margin: 0 $tablet-spacing;
+    }
+
+    @include desktop {
+      margin: 0 $desktop-spacing;
+      box-sizing: border-box;
+    }
+  }
+  &__form-container {
+    @include desktop {
+      display: flex;
+      box-sizing: border-box;
+    }
+  }
+  &__thumbnail-body {
+    @include desktop {
+      margin-right: 2.4rem;
+    }
+  }
+
+  &__input-body {
+      display: flex;
+      flex-direction: column;
+  }
+  &__heading-video {
+    color: $silver;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: $bold;
+
+    @include tablet {
+      display: block;
+      width: fit-content;
+      margin: 4rem 0 0;
+    }
+  }
+  &__thumbnail {
+    background-image: url(../../assets/images/Upload-video-preview.jpg);
+    background-position: center;
+    background-size: cover;
+    margin: 0.5rem 0 3.2rem;
+    width: 28.8rem;
+    height: 15.3rem;
+    border-radius: 0.4rem;
+
+    @include tablet {
+      height: 18.3rem;
+      width: 34.4rem;
+    }
+  }
+  &__heading-title {
+    @extend .upload__heading-video;
+    margin: 3.2rem 0 0.5rem;
+
+    @include tablet {
+      margin: 4rem 0 0.5rem;
+    }
+  }
+  &__input-title {
+    font-family: "Avenir";
+    background-color: $alabaster;
+    height: 4.8rem;
+    width: 28.8rem;
+    border: 0.1rem solid $mercury;
+    border-radius: 0.4rem;
+    outline: none;
+    box-sizing: border-box;
+    margin-bottom: 2.4rem;
+
+    @include tablet {
+      width: 72rem;
+    }
+
+    @include desktop {
+      width: 71rem;
+    }
+  }
+  &__input-title[type="text"] {
+    padding: 1.5rem;
+  }
+
+  &__input-title::placeholder {
+    color: $graphite;
+    font-family: "Avenir";
+    font-size: 1.4rem;
+  }
+  &__heading-description {
+    @extend .upload__heading-video;
+    margin-bottom: 0.5rem;
+
+    @include tablet {
+      margin: 0 0 0.5rem;
+    }
+  }
+  &__input-description {
+    font-family: "Avenir";
+    background-color: $alabaster;
+    border-radius: 0.4rem;
+    border: 0.1rem solid $mercury;
+    height: 14.3rem;
+    width: 28.8rem;
+    margin-bottom: 3.2rem;
+    box-sizing: border-box;
+    outline: none;
+    resize: none;
+
+    @include tablet {
+      width: 72rem;
+      margin-bottom: 4rem;
+    }
+
+    @include desktop {
+      height: 9.4rem;
+      width: 71rem;
+    }
+  }
+  &__input-description[type="text"] {
+    padding: 1.5rem;
+  }
+
+  &__input-description::placeholder {
+    color: $graphite;
+    font-family: "Avenir";
+    font-size: 1.4rem;
+  }
+  &__cta-container {
+    display: flex;
+    flex-direction: column-reverse;
+
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      padding-top: 4rem;
+      border-top: 0.1rem solid $mercury;
+      margin-bottom: 14rem;
+    }
+
+    @include desktop {
+        height: 60vh;
+        margin: 0;
+        align-items: flex-start;
+    }
+  }
+  &__cancel {
+    width: 28.8rem;
+    font-size: 1.4rem;
+    color: $bf-blue;
+    font-weight: $heavy;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0;
+    margin: 2.4rem 0;
+
+    @include tablet {
+      width: fit-content;
+      font-weight: $bold;
+      margin: 0 4.8rem 0 0;
+    }
+
+    @include desktop{
+        padding: 1.5rem;
+    }
+  }
+  &__cta-upload {
+    font-size: 1.4rem;
+    height: 4.8rem;
+    width: 28.8rem;
+    font-weight: $bold;
+    text-transform: uppercase;
+    border-radius: 0.4rem;
+    border-style: none;
+    outline: none;
+    padding: 0;
+    background-color: $bf-blue;
+    color: $white;
+
+    @include tablet {
+      width: 16rem;
+    }
+  }
+}

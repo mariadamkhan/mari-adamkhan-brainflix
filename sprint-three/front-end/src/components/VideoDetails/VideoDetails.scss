@@ -1,0 +1,110 @@
+@use '../../styles/global.scss' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.description {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 $mobile-spacing;
+  @include tablet {
+    margin: 0 $tablet-spacing;
+  }
+  @include desktop {
+    margin: 0;
+    width: 71.2rem;
+  }
+  &__title {
+    font-size: 2.6rem;
+    font-weight: $heavy;
+    margin: 3.2rem 0 1.6rem;
+
+    @include tablet {
+      font-size: 3.6rem;
+      margin: 4.8rem 0 2rem;
+    }
+
+    @include desktop {
+      margin-top: 3rem;
+    }
+  }
+  &__wrap {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 2rem;
+      border-bottom: 0.1rem solid $mercury;
+    }
+  }
+  &__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 3rem;
+
+    @include tablet {
+      margin: 0;
+    }
+  }
+  &__channel {
+    margin: 0;
+    font-size: 1.6rem;
+    @include tablet {
+      font-size: 1.7rem;
+    }
+  }
+  &__date {
+    font-size: 1.4rem;
+    color: $silver;
+    margin-left: 0.8rem;
+  }
+  &__container-two {
+    display: flex;
+    padding-bottom: 2.2rem;
+    border-bottom: 0.1rem solid $mercury;
+    @include tablet {
+      padding: 0;
+      border: none;
+    }
+
+    @include desktop {
+      margin-right: 3.2rem;
+    }
+  }
+  &__watched {
+    display: flex;
+    align-items: center;
+  }
+  &__liked {
+    margin-left: 3rem;
+    display: flex;
+    align-items: center;
+  }
+  &__views {
+    font-size: 1.3rem;
+    color: $graphite;
+    margin-left: 0.8rem;
+  }
+  &__likes {
+    @extend .description__views;
+  }
+  &__description {
+    font-size: 1.2rem;
+    line-height: 18px;
+    margin: 2.4rem 0 4rem;
+
+    @include tablet {
+      margin: 4rem 0 6rem;
+      width: 71%;
+      font-size: $h2mobile;
+      line-height: 2.2rem;
+    }
+
+    @include desktop {
+      margin-bottom: 4rem;
+    }
+  }
+}
