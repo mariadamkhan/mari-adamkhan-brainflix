@@ -1,12 +1,12 @@
 const express = require('express');
 const fs = require('fs');
-const uuid = require('uuid');
+const { v4: uuidv4 } = require('uuid');
 const videosData = require('../data/videos.json');
-const videosRoute = express.Router();
-videosRoute.use(express.json());
+const route = express.Router();
+route.use(express.json());
 
 
-videosRoute.get('/', (_req, res) => {
+route.get('/', (_req, res) => {
     const videos = videosData.map(video => {
         return {
             id:video.id,
@@ -15,11 +15,10 @@ videosRoute.get('/', (_req, res) => {
             image:video.image
         }
     })
-
     res.status(200).send(videos)
 })
 
-videosRoute.get('/:videoId', (req, res) => {
+route.get('/:videoId', (req, res) => {
     let videoId = req.params.videoId;
     let videoDetails = videosData.find(video => {
         return video.id === videoId
@@ -27,21 +26,21 @@ videosRoute.get('/:videoId', (req, res) => {
     res.status(201).send(videoDetails)
 })
 
-videosRoute.post('/', (req, res) => {
-    const{title, image, description, timestamp} = req.body;
-    console.log(req.body)
+route.post('/', (req, res) => {
+    const{title, image, description, timestamp, channel} = req.body;
     videosData.push({
-        id:uui.v4(),
+        id:uuidv4(),
         title: title,
-        channel: 'channel',
+        channel: "channel",
         image: image,
-        description: 'description',
+        description: description,
         views: 0,
         likes: 0,
-        duration: 'duration',
+        duration: timestamp,
+        timestamp: timestamp,
     });
-    fs.writeFileSync('../data/videos.json', JSON.stringify(videosData));
+    fs.writeFileSync('data/videos.json', JSON.stringify(videosData));
     res.json(videosData)
 })
 
-module.exports = videosRoute;
+module.exports = route;

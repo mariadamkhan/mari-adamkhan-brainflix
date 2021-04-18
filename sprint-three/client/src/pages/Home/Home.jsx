@@ -6,9 +6,9 @@ import VideoDetails from "../../components/VideoDetails/VideoDetails";
 import Form from "../../components/Form/Form";
 import DefaultComments from "../../components/DefaultComments/DefaultComments";
 import VideoList from "../../components/VideoList/VideoList";
-// import { API_KEY } from "../../App";
 
-// const videosUrl = 'http://localhost:8080';
+
+const URL = 'http://localhost:8080';
 export default class Home extends Component {
   state = {
     defaultVideo: null,
@@ -17,15 +17,13 @@ export default class Home extends Component {
 
   componentDidMount = () => {
     return axios
-      .get('http://localhost:8080/videos')
+      .get(`${URL}/videos`)
       .then((res) => {
         this.setState({
           upNextVideo: res.data,
         });
         axios
-          .get(
-            `http://localhost:8080/videos/${res.data[0].id}`
-          )
+          .get(`${URL}/videos/${res.data[0].id}`)
           .then((res) => {
             this.setState({
               defaultVideo: res.data,
@@ -46,7 +44,7 @@ export default class Home extends Component {
       this.state.defaultVideo.id !== this.props.match.params.id
     ) {
       return axios
-        .get(`http://localhost:8080/videos/${videoId}`)
+        .get(`${URL}/videos/${videoId}`)
         .then((res) => {
           this.setState({
             defaultVideo: res.data,
@@ -59,6 +57,7 @@ export default class Home extends Component {
       //  .then(()=> {window.scrollTo(0,0)})
     }
   };
+
 
   render() {
     return (
@@ -74,7 +73,7 @@ export default class Home extends Component {
                 <VideoDetails defaultVideo={this.state.defaultVideo} />
               </section>
               <section className="comments">
-                <Form />
+                <Form comments={this.state.defaultVideo.comments}/>
               </section>
               <section className="default-comments">
                 <DefaultComments comments={this.state.defaultVideo.comments} />
@@ -85,6 +84,7 @@ export default class Home extends Component {
                 <VideoList
                   upNextVideo={this.state.upNextVideo}
                   routerProp={this.props}
+                  defaultVideo={this.state.defaultVideo}
                 />
               </section>
             </aside>

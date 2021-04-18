@@ -6,7 +6,7 @@ function DefaultComments({ comments }) {
 
   return (
     <>
-      {comments.map((comment) => {
+      {comments && comments.map((comment) => {
         const commentDate = new Date(comment.timestamp); //function to convert timestamp to readable date
         return (
           <div key={comment.id} className="default-comments__wrap">
