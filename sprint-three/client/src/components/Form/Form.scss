@@ -34,7 +34,7 @@
     justify-content: center;
     position: relative;
     padding-bottom: 2.4rem;
-    border-bottom: 0.1rem solid $mercury;
+    border-bottom: 0.1rem solid $border-color;
     
     @include tablet {
       justify-content: flex-start;
@@ -78,7 +78,7 @@
   }
   &__comment-input {
     border-radius: 0.4rem;
-    border: 0.1rem solid $mercury;
+    border: 0.1rem solid $border-color;
     font-family: "Avenir";
     box-sizing: border-box;
     resize: none;
@@ -97,10 +97,10 @@
   }
   &__comment-input:focus {
     outline: none;
-    border: 0.2rem solid $bf-blue;
+    border: 0.2rem solid $btn-color;
   }
   &__comment-input::placeholder {
-    color: $graphite;
+    color: $font-color;
     font-family: "Avenir";
   }
   &__cta {
@@ -109,7 +109,7 @@
     color: $white;
     font-weight: $bold;
     text-transform: uppercase;
-    background-color: $bf-blue;
+    background-color: $btn-color;
     border-radius: 0.4rem;
     border-style: none;
     outline: none;
@@ -122,6 +122,6 @@
     }
   }
   &__cta:hover {
-    background-color: $bf-hover;
+    background-color: $btn-hover;
   }
 }

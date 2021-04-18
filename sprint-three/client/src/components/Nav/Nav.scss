@@ -4,7 +4,7 @@
 @use '../../styles/partials/mixins' as *;
 
 .nav {
-  height: 16.9rem;
+  height: 30.2vh;
   margin: 0 $mobile-spacing;
   display: flex;
   flex-direction: column;
@@ -28,7 +28,7 @@
   &__search {
     height: 4.8rem;
     width: 28.8rem;
-    border: 0.1rem solid $mercury;
+    border: 0.1rem solid $border-color;
     border-radius: 0.4rem;
     outline: none;
     background-image: url(../../assets/icons/Icon-search.svg);
@@ -47,7 +47,7 @@
     }
   }
   &__search::placeholder {
-    color: $graphite;
+    color: $font-color;
     font-size: $h2mobile;
     font-family: "Avenir";
   }
@@ -65,7 +65,7 @@
     color: $white;
     font-weight: $bold;
     text-transform: uppercase;
-    background-color: $bf-blue;
+    background-color: $btn-color;
     border-radius: 0.4rem;
     border-style: none;
     outline: none;
@@ -83,7 +83,7 @@
     }
   }
   &__cta:hover {
-    background-color: $bf-hover;
+    background-color: $btn-hover;
   }
   &__avatar {
     background-image: url(../../assets/images/Mohan-muruge.jpg);

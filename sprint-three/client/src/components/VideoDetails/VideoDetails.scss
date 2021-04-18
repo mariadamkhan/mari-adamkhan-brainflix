@@ -39,7 +39,7 @@
       display: flex;
       justify-content: space-between;
       padding-bottom: 2rem;
-      border-bottom: 0.1rem solid $mercury;
+      border-bottom: 0.1rem solid $border-color;
     }
   }
   &__container {
@@ -67,7 +67,7 @@
   &__container-two {
     display: flex;
     padding-bottom: 2.2rem;
-    border-bottom: 0.1rem solid $mercury;
+    border-bottom: 0.1rem solid $border-color;
     @include tablet {
       padding: 0;
       border: none;
@@ -88,7 +88,7 @@
   }
   &__views {
     font-size: 1.3rem;
-    color: $graphite;
+    color: $font-color;
     margin-left: 0.8rem;
   }
   &__likes {

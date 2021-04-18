@@ -4,78 +4,75 @@
 @use '../../styles/partials/mixins' as *;
 
 .default-comments {
-    margin: 0 $mobile-spacing;
+  margin: 0 $mobile-spacing;
+  @include tablet {
+    margin: 0 $tablet-spacing;
+  }
+
+  @include desktop {
+    margin: 0;
+    width: 71.2rem;
+  }
+  &__wrap {
+    margin-top: 2.4rem;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2.4rem;
+    border-bottom: 0.1rem solid $border-color;
     @include tablet {
-        margin: 0 $tablet-spacing;
-    }
-
-    @include desktop {
-        margin: 0;
-        width: 71.2rem;
-    }
-    &__wrap {
-      margin-top: 2.4rem;
-      display: flex;
-      justify-content: center;
-      padding-bottom: 2.4rem;
-      border-bottom: 0.1rem solid $mercury;
-      @include tablet {
-          justify-content: flex-start;
-      }
-  
-    }
-    &__avatar {
-      width: 4.8rem;
-      height: 4.8rem;
-      background-color: $mercury;
-      margin-right: 1.5rem;
-      border-radius: 50%;
-    }
-    &__body {
-      width: 80%;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-
-      @include tablet {
-        justify-content: flex-start;
-      }
-    }
-  
-    &__name {
-      font-size: $h2mobile;
-      font-weight: $bold;
-      margin: 0 0 1rem;
-      width: 65%;
-
-      @include tablet {
-        width: fit-content;
-        font-size: $h3desk;
-      }
-      
-    }
-    &__date {
-      font-size: 1.3rem;
-      color: $silver;
-      width: 30%;
-      text-align: end;
-
-      @include tablet {
-        margin-left: 1rem;
-        text-align: start;
-        font-size: $h2mobile;
-      }
-    }
-    &__text {
-      padding: 0;
-      margin: 0;
-      font-size: $h2mobile;
-      line-height: 2rem;
-      width: 100%;
-
-      @include tablet {
-          max-width: 62.4rem;
-      }
+      justify-content: flex-start;
     }
   }
-  
+  &__avatar {
+    width: 3.4vw;
+    height: 5.2vh;
+    background-color: $border-color;
+    margin-right: 1.5rem;
+    border-radius: 50%;
+  }
+  &__body {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @include tablet {
+      justify-content: flex-start;
+    }
+  }
+
+  &__name {
+    font-size: $h2mobile;
+    font-weight: $bold;
+    margin: 0 0 1rem;
+    width: 65%;
+
+    @include tablet {
+      width: fit-content;
+      font-size: $h3desk;
+    }
+  }
+  &__date {
+    font-size: 1.3rem;
+    color: $silver;
+    width: 30%;
+    text-align: end;
+
+    @include tablet {
+      margin-left: 1rem;
+      text-align: start;
+      font-size: $h2mobile;
+    }
+  }
+  &__text {
+    padding: 0;
+    margin: 0;
+    font-size: $h2mobile;
+    line-height: 2rem;
+    width: 100%;
+
+    @include tablet {
+      max-width: 62.4rem;
+    }
+  }
+}

@@ -13,11 +13,11 @@
     object-fit: contain;
 
     @include tablet {
-      height: 40rem;
+      height: 72vh;
     }
 
     @include desktop {
-        height: 54rem;
+        height: 57.8vh;
         width: 100%;
     }
   }

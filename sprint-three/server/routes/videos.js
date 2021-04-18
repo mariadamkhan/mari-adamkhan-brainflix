@@ -27,17 +27,16 @@ route.get('/:videoId', (req, res) => {
 })
 
 route.post('/', (req, res) => {
-    const{title, image, description, timestamp, channel} = req.body;
+    const{title, image, description} = req.body;
     videosData.push({
         id:uuidv4(),
         title: title,
-        channel: "channel",
+        channel: "Channel",
         image: image,
         description: description,
         views: 0,
         likes: 0,
-        duration: timestamp,
-        timestamp: timestamp,
+        timestamp: Date.now()
     });
     fs.writeFileSync('data/videos.json', JSON.stringify(videosData));
     res.json(videosData)

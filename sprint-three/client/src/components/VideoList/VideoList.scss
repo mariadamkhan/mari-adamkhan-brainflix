@@ -16,7 +16,7 @@
     padding-left: $tablet-spacing;
     margin: 0;
     width: 36.8rem;
-    border-left: 0.1rem solid $mercury;
+    border-left: 0.1rem solid $border-color;
   }
   &__category {
     font-size: $h2mobile;
@@ -39,7 +39,7 @@
   }
   &__link {
     text-decoration: none;
-    color: $graphite;
+    color: $font-color;
   }
   &__video {
     min-width: 12rem;

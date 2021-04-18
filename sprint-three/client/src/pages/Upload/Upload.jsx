@@ -76,7 +76,7 @@ export default class Upload extends Component {
             </div>
           </div>
           <div className="upload__cta-container">
-            <p className="upload__cancel">Cancel</p>
+            <button className="upload__cta-cancel">Cancel</button>
             <button
               className="upload__cta-upload"
               id="uploadUpload"
