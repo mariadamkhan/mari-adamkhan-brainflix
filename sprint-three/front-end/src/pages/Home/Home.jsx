@@ -6,9 +6,9 @@ import VideoDetails from "../../components/VideoDetails/VideoDetails";
 import Form from "../../components/Form/Form";
 import DefaultComments from "../../components/DefaultComments/DefaultComments";
 import VideoList from "../../components/VideoList/VideoList";
-import { API_KEY } from "../../App";
+// import { API_KEY } from "../../App";
 
-const videosUrl = 'http://localhost:8080';
+// const videosUrl = 'http://localhost:8080';
 export default class Home extends Component {
   state = {
     defaultVideo: null,
@@ -17,14 +17,14 @@ export default class Home extends Component {
 
   componentDidMount = () => {
     return axios
-      .get(`https://project-2-api.herokuapp.com/videos${API_KEY}`)
+      .get('http://localhost:8080/videos')
       .then((res) => {
         this.setState({
           upNextVideo: res.data,
         });
         axios
           .get(
-            `https://project-2-api.herokuapp.com/videos/${res.data[0].id}${API_KEY}`
+            `http://localhost:8080/videos/${res.data[0].id}`
           )
           .then((res) => {
             this.setState({
@@ -46,7 +46,7 @@ export default class Home extends Component {
       this.state.defaultVideo.id !== this.props.match.params.id
     ) {
       return axios
-        .get(`https://project-2-api.herokuapp.com/videos/${videoId}${API_KEY}`)
+        .get(`http://localhost:8080/videos/${videoId}`)
         .then((res) => {
           this.setState({
             defaultVideo: res.data,

@@ -15,13 +15,13 @@ videosRoute.get('/', (_req, res) => {
             image:video.image
         }
     })
-    console.log(videos)
+
     res.status(200).send(videos)
 })
 
-videosRoute.get(':videoId', (req, res) => {
+videosRoute.get('/:videoId', (req, res) => {
     let videoId = req.params.videoId;
-    let videoDetails = videoData.find(video => {
+    let videoDetails = videosData.find(video => {
         return video.id === videoId
     })
     res.status(201).send(videoDetails)
@@ -30,7 +30,7 @@ videosRoute.get(':videoId', (req, res) => {
 videosRoute.post('/', (req, res) => {
     const{title, image, description, timestamp} = req.body;
     console.log(req.body)
-    videoData.push({
+    videosData.push({
         id:uui.v4(),
         title: title,
         channel: 'channel',
@@ -40,7 +40,7 @@ videosRoute.post('/', (req, res) => {
         likes: 0,
         duration: 'duration',
     });
-    fs.writeFileSync('data/videos.json', JSON.stringify(videosData));
+    fs.writeFileSync('../data/videos.json', JSON.stringify(videosData));
     res.json(videosData)
 })
 
