@@ -8,6 +8,7 @@ import DefaultComments from "../../components/DefaultComments/DefaultComments";
 import VideoList from "../../components/VideoList/VideoList";
 import { API_KEY } from "../../App";
 
+const videosUrl = 'http://localhost:8080';
 export default class Home extends Component {
   state = {
     defaultVideo: null,
