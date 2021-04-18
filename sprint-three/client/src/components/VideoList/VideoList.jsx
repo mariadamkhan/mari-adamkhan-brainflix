@@ -2,7 +2,7 @@ import React from "react";
 import "./VideoList.scss";
 import {Link} from "react-router-dom";
 
-function VideoList({upNextVideo, routerProps}) {
+function VideoList({upNextVideo}) {
   return (
     <>
       <h2 className="video-list__category">Next Video</h2>

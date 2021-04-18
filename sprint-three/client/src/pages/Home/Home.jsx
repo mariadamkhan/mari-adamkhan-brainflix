@@ -7,8 +7,7 @@ import Form from "../../components/Form/Form";
 import DefaultComments from "../../components/DefaultComments/DefaultComments";
 import VideoList from "../../components/VideoList/VideoList";
 
-
-const URL = 'http://localhost:8080';
+const URL = "http://localhost:8080";
 export default class Home extends Component {
   state = {
     defaultVideo: null,
@@ -22,13 +21,11 @@ export default class Home extends Component {
         this.setState({
           upNextVideo: res.data,
         });
-        axios
-          .get(`${URL}/videos/${res.data[0].id}`)
-          .then((res) => {
-            this.setState({
-              defaultVideo: res.data,
-            });
+        axios.get(`${URL}/videos/${res.data[0].id}`).then((res) => {
+          this.setState({
+            defaultVideo: res.data,
           });
+        });
       })
       .catch((error) => {
         console.error("Error in making a GET request", error);
@@ -54,10 +51,8 @@ export default class Home extends Component {
         .catch((error) => {
           console.error("Error in making a GET request", error);
         });
-      //  .then(()=> {window.scrollTo(0,0)})
     }
   };
-
 
   render() {
     return (
@@ -73,7 +68,7 @@ export default class Home extends Component {
                 <VideoDetails defaultVideo={this.state.defaultVideo} />
               </section>
               <section className="comments">
-                <Form comments={this.state.defaultVideo.comments}/>
+                <Form comments={this.state.defaultVideo.comments} />
               </section>
               <section className="default-comments">
                 <DefaultComments comments={this.state.defaultVideo.comments} />
@@ -83,8 +78,6 @@ export default class Home extends Component {
               <section className="video-list">
                 <VideoList
                   upNextVideo={this.state.upNextVideo}
-                  routerProp={this.props}
-                  defaultVideo={this.state.defaultVideo}
                 />
               </section>
             </aside>

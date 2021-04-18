@@ -20,5 +20,4 @@ function App() {
   );
 }
 
-export const API_KEY ="?api_key=8ee384fb-4633-4cf7-8154-79ad9b309f82";
 export default App;
